@@ -25,20 +25,15 @@ HTML/CSSのみ。npm、フレームワーク、ビルドコマンド、JavaScrip
 
 各ページのリンクとCSSは相対パスで指定し、GitHub Pagesのproject siteの`/oshicanvas-site/`配下で動作します。ブランドマークと記録帳のイメージはCSSで作成しており、アプリの実スクリーンショットではありません。実在する人物・キャラクターの名前や画像は使用していません。
 
-## 公開前に必ず置き換えるもの
+## 確定した問い合わせ先・表示方針
 
-現時点では、次の2項目を意図的にplaceholderのままにしています。
+問い合わせメールは **oshicanvas@gmail.com** です。SupportとPrivacy Policyの両ページに、表示文字列と`mailto:oshicanvas@gmail.com`を設定しています。
 
-| placeholder | 確定後に入れるもの |
-| --- | --- |
-| `CONTACT_EMAIL@example.com` | 公開可能で、実際に受信・返信できる問い合わせ用メールアドレス |
-| `PUBLIC_DEVELOPER_NAME` | 公開する開発・運営者名 |
+サイト本文には開発者名・運営者名を表示しません。個人名への置換は行わず、全ページから氏名用の仮表示を削除しました。問い合わせ窓口は上記メールへ統一します。
 
-**すべてのHTML内のplaceholderを置き換えてから公開してください。** メールは表示文字列と`mailto:`の両方、運営者名は全ページのfooterを確認します。README内の説明用placeholder表記は、手順のために残せます。
+メールリンクの確認は、実際にメールの送受信を行ったことを意味しません。
 
-初期ローカルcommitも、実名・個人メールの意図しない公開を避けるため、この2項目をauthor/committerの仮名・仮メールとして使用します。公開前に`git log --format=fuller`で公開される履歴を確認し、今後のcommitに使う公開用Git identityも決めてください。既存のアプリrepositoryやglobal Git設定は変更しません。
-
-この2項目が未確定の間は、Support窓口も未完成です。App Store Connectへ登録したり、審査用の公開URLとして提出したりしないでください。
+Gitのauthor/committerはサイト本文とは別に公開される情報です。公開前には`git log --format=fuller`で履歴も確認してください。今回のcommitには公開ブランド名と上記問い合わせメールを使い、既存の履歴・アプリrepository・global Git設定は変更しません。
 
 ## 公開予定URL / App Store Connect
 
@@ -54,7 +49,7 @@ HTML/CSSのみ。npm、フレームワーク、ビルドコマンド、JavaScrip
 
 ## GitHub Pages公開方法（後日、明示的に公開するときだけ）
 
-1. 下の公開前checklistを完了する。
+1. 下の公開前checklistで、実機・実装・Privacy照合など公開前にできる確認を済ませる。
 2. GitHubで、公開用の空repository `sengoku-souroku/oshicanvas-site`を作成する。初期README等を自動生成せず、アプリ本体のrepositoryを転用しない。
 3. このローカルrepositoryへ、その公開repositoryを`origin`として登録し、`main`を通常pushする。公開内容とcommit履歴を確認し、force pushはしない。
 4. 公開repositoryの **Settings → Pages → Build and deployment → Source → Deploy from a branch** を選ぶ。
@@ -76,17 +71,16 @@ GitHub公式：[静的サイトの作成](https://docs.github.com/en/pages/getti
 
 ## 公開前checklist
 
-- [ ] HTML内の`CONTACT_EMAIL@example.com`を全箇所置換し、`mailto:`から実際に連絡できることを確認した
-- [ ] HTML内の`PUBLIC_DEVELOPER_NAME`を全箇所置換し、公開する運営者名と一致させた
-- [ ] Gitの履歴・author/committer、追跡ファイルを確認し、個人情報・private情報・秘密情報が含まれない
+- [x] 問い合わせメールを`oshicanvas@gmail.com`に確定した
+- [x] 仮の問い合わせメールをすべて解消し、Support・Privacyの表示とメールリンクを更新した
+- [x] 開発者名・運営者名のplaceholderは不要と決定し、全ページとREADMEから削除した
+- [ ] 公開用GitHub repository `sengoku-souroku/oshicanvas-site`を作成し、追跡ファイルと公開Git履歴を確認して通常pushする
+- [ ] GitHub Pagesを`main` / `/(root)`から有効化する
+- [ ] 公開後、Top/Privacy/Supportの予定URLとページ間リンクがHTTPSでログインなしに開けることを確認する
+- [ ] iPhone Safariで文字サイズ変更、縦横表示、リンク、横はみ出し、読み上げ・focusを確認する
 - [ ] **Production/TestFlight buildの実際の機能・通信・権限と、Privacy Policy・Support・アプリ内Helpを最終照合した**
 - [ ] **App Store ConnectのApp Privacy回答と、実装・第三者SDKのデータの扱い・本Policyを最終照合した**
-- [ ] Pro購入・購入の復元、AIの対応条件、backup/restoreの画面名を公開buildで確認した
-- [ ] 未公開の画像AI、Web取得、開発診断を利用可能な製品機能として掲載していない
-- [ ] Privacy最終更新日を確認した（現原稿：2026年11月1日）
-- [ ] iPhone Safariで文字サイズ変更、縦横表示、リンク、横はみ出し、読み上げ・キーボードfocusを確認した
-- [ ] 全3ページのCSSとページ内/ページ間リンク、戻り先、問い合わせリンクが正しい
-- [ ] GitHub Pages公開後、Top/Privacy/Supportの予定URLがHTTPSでログインなしに開ける
-- [ ] 公開後のURL確認を終えてからApp Store Connectへ登録する
+
+Production/TestFlightとの照合には、Pro購入・購入の復元、AIの対応条件、backup/restoreの画面名、未公開機能を宣伝していないこと、Privacyの最終更新日（現原稿：2026年11月1日）を含めます。公開URL確認を終えるまでApp Store ConnectへURLを登録しません。
 
 この原稿のローカル検証は、Production/TestFlight実機受入、公開URLの到達性、App Privacy回答の承認を意味しません。実装・SDK・課金・データ処理が変わるときは、文章と最終更新日も見直してください。
