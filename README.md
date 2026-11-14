@@ -4,7 +4,9 @@ iPhone向け推し活記録アプリ「推しキャンバス / OshiCanvas」の�
 
 コンセプトは「推しごとに、自分だけの記録帳を。」。アプリ本体のprivate repositoryとは分離し、アプリのソースコード、実ユーザーデータ、写真、開発ログ、署名・認証情報は置きません。
 
-**2026-11-14確認：GitHubの既存repositoryはprivate、mainは`322ccc9`、GitHub Pagesは未設定（`has_pages=false`）。予定のPrivacy／Support URLはHTTP404です。** ローカルだけのrepoではありません。今回のOCR対応原稿は`chore/testflight-public-pages`に用意し、公開承認前にpush・merge・visibility変更・Pages有効化は行いません。
+**2026-11-14公開完了：ユーザーの明示承認後、サイトrepositoryのみpublic化し、承認済み原稿`6352b04`をmainへ統合・pushしました。GitHub Pagesはmain／root、HTTPSで公開中です。** Top・Privacy・Support・CSSは匿名HTTP200、公開HTML/CSSは承認済み原稿と一致します。アプリ本体のpush・merge、EAS Build／Submit、App Store公開は行っていません。
+
+公開前はprivate、main=`322ccc9`、Pages未設定、URLはHTTP404でした。以下の公開手順と承認範囲は、今回の公開経緯および将来の更新時の確認用です。
 
 ## 構成
 
@@ -37,19 +39,19 @@ HTML/CSSのみ。npm、フレームワーク、ビルドコマンド、JavaScrip
 
 Gitのauthor/committerはサイト本文とは別に公開される情報です。公開前には`git log --format=fuller`で履歴も確認してください。今回のcommitには公開ブランド名と上記問い合わせメールを使い、既存の履歴・アプリrepository・global Git設定は変更しません。
 
-## 公開予定URL / App Store Connect
+## 公開URL / App Store Connect
 
-公開予定repository：`sengoku-souroku/oshicanvas-site`。
+公開repository：`sengoku-souroku/oshicanvas-site`。
 
-| 用途 | 公開後に使うURL |
+| 用途 | 公開URL |
 | --- | --- |
 | Top / Marketing URL候補 | https://sengoku-souroku.github.io/oshicanvas-site/ |
 | Privacy Policy URL | https://sengoku-souroku.github.io/oshicanvas-site/privacy/ |
 | Support URL | https://sengoku-souroku.github.io/oshicanvas-site/support/ |
 
-これらは**予定URLであり、現在の公開・到達性を確認したURLではありません**。公開後にログアウト状態のブラウザとiPhone Safariで開けることを確認してから、App Store Connectの対応するURL欄に使用します。今回App Store Connectの変更は行いません。
+上記3 URLとCSSは2026-11-14に匿名HTTP200と承認済み原稿との一致を確認しました。iPhone Safariの実表示と問い合わせメールの受信は未確認です。App Store Connectの対応するURL欄への登録は別工程であり、今回変更していません。
 
-## GitHub Pages公開方法（後日、明示的に公開するときだけ）
+## GitHub Pages公開方法（今回実施した手順）
 
 1. 下の公開前checklistで、実機・実装・Privacy照合など公開前にできる確認を済ませる。
 2. 既存の`origin`が`sengoku-souroku/oshicanvas-site`であることを再確認する。新repositoryは作らず、privateからpublicへの変更は明示承認後だけ行う。
@@ -59,7 +61,7 @@ Gitのauthor/committerはサイト本文とは別に公開される情報です�
 6. GitHub側の公開処理後、上記3 URL、CSS、ページ間リンク、メールリンクを確認する。HTTPSで表示されることも確認する。
 7. 確認後にApp Store ConnectへURLを登録する。以後`main`へpushするとサイトが更新されるため、変更は公開前に確認する。
 
-GitHub公式：[静的サイトの作成](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)、[公開元branchの設定](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。今回これらのリモート操作は行いません。
+GitHub公式：[静的サイトの作成](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)、[公開元branchの設定](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。今回のリモート操作は明示承認されたサイトrepoの統合・push・public化・Pages設定だけです。
 
 ## Privacy文言の基準
 
